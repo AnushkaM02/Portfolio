@@ -1,0 +1,255 @@
+/* Custom properties */
+:root{
+    /* --purple: #785dac; */
+    /* --purple: #453465; */
+    --purple: #48346a;
+    --dark-grey:#29313e;
+    --light-grey:#edf2fa;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
+}
+
+.container{
+    max-width: 1100px;
+    margin: 0 auto;     /*if stretched past 1100px, container will stay there only and not move*/
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.card{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(45, 45, 45, 0.2);
+    /* box-shadow: horizontal-offset vertical-offset blue color*/
+    color: rgb(38, 38, 38);
+}
+
+.fa-envelope{
+    color: #45738a;
+}
+
+.fa-github{
+    color: #171515;
+}
+
+.linkedin{
+    color: #007bb5;
+}
+
+.fa-linkedin white{
+    color: white;
+}
+
+.fa-calculator, .fa-python{
+    color: black;
+}
+
+.btn{
+    display: inline-block;
+    padding: 10px 30px;
+    cursor: pointer;
+    /* background:#45738a; */
+    background: #29313e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-outline{
+    background-color: transparent;
+    border: 1px white solid;
+}
+
+.btn:hover{
+    transform: scale(0.97);
+}
+
+.btn-dark{
+    background: rgb(233, 231, 235);
+    color: #29313e;
+    font-weight: bold;
+}
+
+/* Backgrounds */
+.bg-primary{
+    background-color: var(--purple);
+    color: white;
+}
+.bg-dark{
+    background-color: var(--dark-grey);
+    color: white;
+}
+
+.bg-grey{
+    background-color:rgb(241 245 249);
+    color: black;
+}
+
+.bg-bluegrey{
+    background-color: #b9becf;
+    color: black;
+}
+
+.bg-dark a{
+    color: white;
+}
+
+/* Text colors */
+.text-primary{
+    color: var(--purple);
+}
+
+.text-dark{
+    color: var(--dark-grey);
+}
+
+.text-grey{
+    color: var(--light-grey);
+}
+
+/* Text Sizes */
+.lead{
+    font-size: 18px;
+}
+
+.sm{
+    font-size: 1rem;
+}
+
+.md{
+    font-size: 2rem;
+}
+
+.lg{
+    font-size: 3rem;
+}
+
+.text-center{
+    text-align: center;
+}
+
+/* Alert */
+.alert{
+    background-color: var(--light-grey);
+    padding: 10px 20px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.alert i{
+    margin-right: 10px;
+}
+
+.alert-success{
+    background-color: var(--success-color);
+    color: white;
+}
+
+.alert-error{
+    background-color: var(--error-color);
+    color: white;
+}
+
+.flex{
+    display: flex;
+    /* flex-direction: column;  Can have flex columns */
+    justify-content: center;    /* Refers to main axis */
+    align-items: center;    /* Refers to cross axis */
+    height: 100%;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr); /* repeat twice 1fr which is the same as 1fr 1fr */
+    /* can also write pixels like 200px 200px so each column would be 200px, can also use percentages */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;   /* height for the grid container or else align items won't work */
+}
+
+.grid-3{
+    grid-template-columns: repeat(3,1fr); 
+}
+
+/* Margin */
+.my-1{  /* y for y-axis */
+    margin: 1rem 0;
+}
+
+.my-2{ 
+    margin: 1.5rem 0;
+}
+
+.my-3{ 
+    margin: 2rem 0;
+}
+
+.my-4{ 
+    margin: 3rem 0;
+}
+
+.my-5{ 
+    margin: 4rem 0;
+}
+
+.m-1{ 
+    margin: 1rem;
+}
+
+.m-2{ 
+    margin: 1.5rem;
+}
+
+.m-3{ 
+    margin: 2rem;
+}
+
+.m-4{ 
+    margin: 3rem;
+}
+
+.m-5{ 
+    margin: 4rem;
+}
+
+/* Padding */
+.py-1{  /* y for y-axis */
+    padding: 1rem 0;
+}
+
+.py-2{ 
+    padding: 1.5rem 0;
+}
+
+.py-3{ 
+    padding: 2rem 0;
+}
+
+.py-4{ 
+    padding: 3rem 0;
+}
+
+.py-5{ 
+    padding: 4rem 0;
+}
+
+.p-1{ 
+    padding: 1rem;
+}
+
+.p-2{ 
+    padding: 1.5rem;
+}
+
+.p-3{ 
+    padding: 2rem;
+}
+
+.p-4{ 
+    padding: 3rem;
+}
+
+.p-5{ 
+    padding: 4rem;
+}

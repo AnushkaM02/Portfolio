@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Lora&display=swap');
+
+/* Custom properties */
+:root{
+    --purple: #48346a;
+    --dark-grey:#29313e;
+    --light-grey:#edf2fa;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
+}
+
+*{
+    box-sizing: border-box; /* Lets you add padding etc without adding to width */
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Bitter', serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+h1, h2{
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+.grid-3 h2{
+    font-size: 20px;
+}
+
+p{
+    margin: 10px 0;
+}
+
+img{
+    width: 100%;
+}
+
+code, pre{
+    background: #333;
+    color: white;
+    padding: 10px;
+}
+
+/* Navbar */
+.navbar{
+    background-color: var(--purple);
+    color: white;
+    height: 70px;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar a{
+    color: white;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.navbar a:hover{
+    border-bottom: 2px white solid;
+}
+
+.navbar .flex{
+    justify-content: space-between;
+}
+
+/* Showcase */
+.showcase{
+    height: 400px;
+    background-color:var(--purple);
+    color: white;
+    position: relative; /* so that we can position anything absolute within it */
+}
+
+.showcase h1{
+    font-size: 40px;
+}
+
+.showcase p{
+    margin: 20px 0;
+}
+
+.showcase a{
+    color: #d9d8de;
+}
+
+.showcase .grid{
+    grid-template-columns: 55% 45%;
+    gap: 30px;
+    overflow: visible;  /* removes the scrollbar */
+}
+
+.showcase-text{
+    animation: slideInFromLeft 1s ease-in;
+}
+
+.showcase-form{
+    position: relative;
+    /* position should be relative or absolute to use top or bottom */
+    top: 60px;
+    height: 350px;
+    width: 400px;
+    padding: 40px;
+    z-index: 100;   /* to make sure its always in front */
+    animation: slideInFromRight 1s ease-in;
+}
+
+.showcase-form .form-control{
+    margin: 30px 0;
+}
+
+.showcase-form input[type="text"],
+.showcase-form input[type="email"]{
+    border: 0;
+    border-bottom: 1px solid var(--purple);
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.showcase-form input:focus{
+    outline: none;
+}
+
+.showcase::before,
+.showcase::after{
+    content: '';    /* this property has to be included with before and after */
+    position: absolute;
+    /* position will be absolute inside the relative showcase position, now we can add top or bottom */
+    height: 100px;
+    bottom: -70px;
+    right: 0;
+    left: 0;
+    background: rgb(241 245 249);
+    /* To add the slant */
+    transform: skewY(-3deg);
+    -webkite-transform: skewY(-3deg);    /* Chrome and Safari */
+    -moz-transform: skewY(-3deg);   /* Mozilla */
+    -ms-transform: skewY(-3deg);    /* Microsoft */
+}
+
+/* Stats */
+.stats{
+    padding-top: 100px;
+    animation: slideInFromBottom 1s ease-in;
+}
+
+.stats-heading{
+    max-width: 800px;
+    margin:auto;
+}
+
+.stats .grid h3{
+    font-size: 35px;
+}
+
+.stats .grid p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Sample */
+.sample .container{
+    max-width: 800px;
+    margin: 0 auto;     /*if stretched past 1100px, container will stay there only and not move*/
+    overflow: auto;
+    padding: 10px 0px 0px 0px;
+}
+
+.sample .grid{
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 52px;
+    height: 100%;
+}
+
+.sample .grid > *:first-child{  /* selects anything that is the first child in that grid */
+    grid-column: 1 / span 2;    /* spans from column 1 to 2 */
+    grid-row: 1 / span 4;    /* spans from column 1 to 2 */
+}
+
+.sample .card{
+    padding: 10px 20px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(55, 55, 55, 0.2);
+    background-color: #3c5c6c;
+    color:white;
+}
+
+/* Work */
+.work .grid{
+    grid-template-columns: 4fr 3fr;
+}
+
+/* Languages */
+.langauges .flex{
+    flex-wrap: wrap;
+}
+
+.languages .card{
+    text-align: center;
+    margin: 20px 15px 80px;
+    transition: transform 0.2s ease-in;
+    height: 100%;
+    padding: 10px;
+    width: 150px;
+    height: 160px;
+}
+
+.languages h2{
+    margin: 0px;
+}
+
+.languages .card h4{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.languages .card:hover{
+    transform: translateY(-15px);
+}
+
+.fa-python, .fa-java, .fa-code, .fa-html5,
+.fa-css3-alt, .fa-js-square{
+    color: var(--dark-grey);
+}
+
+/* About */
+.about-sub-head,
+.about-main{
+    background-color:rgb(241 245 249);
+}
+
+.about-head img,
+.projects-head img{
+    width: 200px;
+    justify-self: flex-end;
+}
+
+.about-sub-head img{
+    width: 400px;
+    justify-self: flex-end;
+}
+
+/* Sub-header */
+.about-sub-head ul .x{
+    list-style-type:disc;
+}
+
+.about-sub-head ul .y{
+    list-style-type:disc;
+}
+
+.about-sub-head li{
+    padding: 5px;
+}
+
+.about-main .lg{
+    margin-left: 5.6em;
+}
+
+.about-main .card{
+    padding:20px;
+    box-shadow: 0 3px 10px rgba(38, 38, 77, 0.39);
+}
+
+.about-main .card > i{  /* for initial/direct icon */
+    margin-right: 20px;
+}
+
+.about-main .grid{
+    padding: 30px;
+}
+
+.about-main .grid > *:first-child{
+    grid-column: 1 / span 3;
+}
+
+.about-main .grid > *:nth-child(2){
+    grid-column: 1 / span 2;
+}
+
+/* Projects */
+.projects-main h3{
+    margin: 20px;
+}
+
+.projects-main .card{
+    padding: 20px;
+}
+
+.projects-main .grid{
+    grid-template-columns: 1fr 2fr;
+    align-items: flex-start;
+}
+
+.projects-main nav li{
+    font-size: 17px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px #ccc solid;
+}
+
+.projects-main a:hover{
+    font-weight: bold;
+}
+
+/* Footer */
+.footer .social a{
+    margin: 0 5px;
+}
+
+/* Animations */
+@keyframes slideInFromLeft{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromTop{
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromBottom{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+/* Tablets and under */
+@media(max-width: 768px){
+    .grid,
+    .showcase .grid,
+    .stats .grid,
+    .sample .grid,
+    .langauges .grid,
+    .about-main .grid
+    .projects-main .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .showcase{
+        height: auto;
+    }
+
+    .showcase-text{
+        text-align: center;
+        margin-top: 40px;
+        animation: slideInFromTop 1s ease-in;
+    }
+
+    .showcase-form{
+        justify-self: center;   /* used to justify grid or flex item */
+        margin: auto;
+        animation: slideInFromBottom 1s ease-in;
+    }
+
+    .sample .grid > *:first-child{  
+        grid-column: 1;    
+        grid-row: 1;   
+    }
+
+    .about-head,
+    .about-sub-head,
+    .projects-head{
+        text-align: center;
+    }
+
+    .about-head img,
+    .about-sub-head img,
+    .projects-head img{
+        justify-self: center;
+    }
+
+    .about-main .grid >*:first-child,
+    .about-main .grid >*:nth-child(2){
+        grid-column: 1;
+    }
+}
+
+/* Mobile */
+@media(max-width: 500px){
+    .navbar{
+        height: 110px;
+    }
+
+    .navbar .flex{
+        flex-direction: column;
+    }
+
+    .navbar ul{
+        padding: 10px;
+        background-color: rgba(0,0,0,0.1);
+    }
+}
